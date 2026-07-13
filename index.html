@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>H04X</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#fff;
+    color:#000;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    font-family:'Share Tech Mono', monospace;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(0,0,0,.03),
+            rgba(0,0,0,.03) 1px,
+            transparent 2px,
+            transparent 4px
+        );
+    pointer-events:none;
+}
+
+.container{
+    text-align:center;
+    animation:fade 1.5s ease;
+}
+
+.logo{
+    width:180px;
+    height:180px;
+    margin:auto;
+    border-radius:50%;
+    overflow:hidden;
+    border:3px solid #000;
+    box-shadow:0 0 40px rgba(0,0,0,.15);
+}
+
+.logo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+h1{
+    font-family:'Press Start 2P', monospace;
+    font-size:38px;
+    margin-top:35px;
+    letter-spacing:6px;
+    text-shadow:3px 3px 0 rgba(0,0,0,.15);
+}
+
+.subtitle{
+    margin-top:18px;
+    font-size:20px;
+    letter-spacing:8px;
+    text-transform:uppercase;
+}
+
+.telegram{
+    margin-top:55px;
+}
+
+.telegram a{
+    color:#000;
+    text-decoration:none;
+    font-size:18px;
+    letter-spacing:3px;
+    transition:.25s;
+}
+
+.telegram a:hover{
+    letter-spacing:8px;
+}
+
+.footer{
+    position:fixed;
+    bottom:18px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:13px;
+    opacity:.55;
+    letter-spacing:2px;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">
+        <img src="https://i.imgur.com/gXny58f.png">
+    </div>
+
+    <h1>H04X</h1>
+
+    <div class="subtitle">
+        hacked for fun
+    </div>
+
+    <div class="telegram">
+        <a href="https://t.me/sychoticdox" target="_blank">
+            TELEGRAM
+        </a>
+    </div>
+
+</div>
+
+<div class="footer">
+    &copy; H04X
+</div>
+
+
+<audio id="bgm" loop preload="auto">
+    <source src="https://h.top4top.io/m_3428m29151.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const audio = document.getElementById("bgm");
+
+function startMusic() {
+    audio.play().catch(() => {});
+    removeEvents();
+}
+
+function removeEvents() {
+    [
+        "click",
+        "contextmenu",
+        "mousedown",
+        "mouseup",
+        "wheel",
+        "scroll",
+        "keydown",
+        "touchstart"
+    ].forEach(e => {
+        document.removeEventListener(e, startMusic);
+    });
+}
+
+[
+    "click",
+    "contextmenu",
+    "mousedown",
+    "mouseup",
+    "wheel",
+    "scroll",
+    "keydown",
+    "touchstart"
+].forEach(e => {
+    document.addEventListener(e, startMusic, {
+        passive: true
+    });
+});
+
+document.getElementById("bgm").play().catch(() => {});
+</script>
+</body>
+</html>
