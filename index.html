@@ -76,20 +76,33 @@ h1{
     text-transform:uppercase;
 }
 
-.telegram{
-    margin-top:55px;
+.links{
+    margin-top:45px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
 }
 
-.telegram a{
+.links a{
     color:#000;
     text-decoration:none;
     font-size:18px;
     letter-spacing:3px;
     transition:.25s;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
 }
 
-.telegram a:hover{
+.links a:hover{
     letter-spacing:8px;
+}
+
+.links a svg{
+    width:18px;
+    height:18px;
+    fill:currentColor;
 }
 
 .footer{
@@ -129,9 +142,13 @@ h1{
         hacked for fun
     </div>
 
-    <div class="telegram">
-        <a href="https://t.me/sychoticdox" target="_blank">
+    <div class="links">
+        <a href="https://t.me/neggromaniac" target="_blank">
             TELEGRAM
+        </a>
+        
+        <a href="https://h04x.llc" target="_blank">
+            h04x.llc
         </a>
     </div>
 
@@ -140,7 +157,6 @@ h1{
 <div class="footer">
     &copy; H04X
 </div>
-
 
 <audio id="bgm" loop preload="auto">
     <source src="https://h.top4top.io/m_3428m29151.mp3" type="audio/mpeg">
